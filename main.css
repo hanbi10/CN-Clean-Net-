@@ -1,0 +1,743 @@
+/* ===== main.css - 메인 페이지 전용 스타일 ===== */
+
+/* ===== Hero Section (메인 배너 영역) ===== */
+/* 히어로 섹션 전체 레이아웃 */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 480px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+    color: #222;
+    overflow: hidden;
+}
+
+/* 히어로 섹션 배경 이미지 오버레이 */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('../images/main_img/메인 이미지.jpg') center center / cover no-repeat;
+    opacity: 0.22;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* 히어로 섹션 내부 컨테이너 */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+/* 히어로 섹션 텍스트 요소들 */
+.hero-section h1, .hero-section p, .hero-section .hero-buttons {
+    color: #222;
+    text-shadow: 0 2px 8px rgba(255,255,255,0.7);
+    position: relative;
+    z-index: 2;
+}
+
+/* 히어로 섹션 메인 제목 */
+.hero-section h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+/* 히어로 섹션 설명 텍스트 */
+.hero-section p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+}
+
+/* 히어로 섹션 버튼 영역 */
+.hero-section .hero-buttons {
+    position: relative;
+    z-index: 2;
+}
+
+/* 히어로 섹션 주요 버튼 (파란색) */
+.hero-section .hero-buttons .primary-button {
+    background-color: var(--primary-blue);
+    color: white;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* 히어로 섹션 주요 버튼 호버 효과 */
+.hero-section .hero-buttons .primary-button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* 히어로 섹션 보조 버튼 (테두리만) */
+.hero-section .hero-buttons .secondary-button {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+/* 히어로 섹션 보조 버튼 호버 효과 */
+.hero-section .hero-buttons .secondary-button:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* 히어로 섹션 이미지 숨김 (모바일용) */
+.hero-section .hero-image { display: none; }
+
+/* ===== Section Description (섹션 설명 스타일) ===== */
+.section-description {
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--gray-text);
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ===== Core Values Section (핵심 가치 섹션) ===== */
+/* 핵심 가치 섹션 배경 */
+.core-values-section {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+/* 핵심 가치 섹션 제목 */
+.core-values-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 핵심 가치 카드 그리드 레이아웃 */
+.value-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* 핵심 가치 카드 스타일 */
+.value-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 핵심 가치 카드 호버 효과 */
+.value-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--box-shadow-medium);
+}
+
+/* 핵심 가치 카드 아이콘 원형 배경 */
+.value-card .icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* 핵심 가치 카드 아이콘 */
+.value-card .icon-circle i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+}
+
+/* 핵심 가치 카드 제목 */
+.value-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* 핵심 가치 카드 설명 */
+.value-card p {
+    color: var(--gray-text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* 핵심 가치 카드 링크 */
+.value-card .learn-more-link {
+    color: var(--primary-blue);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 핵심 가치 카드 링크 호버 효과 */
+.value-card .learn-more-link:hover {
+    color: var(--dark-blue);
+}
+
+/* ===== What is Digital Citizenship Section (디지털 시민의식 설명 섹션) ===== */
+/* 디지털 시민의식 섹션 배경 */
+.what-is-digital-citizenship {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+/* 디지털 시민의식 섹션 제목 */
+.what-is-digital-citizenship h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 디지털 시민의식 카드 그리드 레이아웃 */
+.citizenship-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* 디지털 시민의식 카드 스타일 */
+.citizenship-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 디지털 시민의식 카드 호버 효과 */
+.citizenship-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--box-shadow-medium);
+}
+
+/* 디지털 시민의식 카드 아이콘 원형 배경 */
+.citizenship-card .icon-circle {
+    width: 80px;
+    height: 80px;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* 디지털 시민의식 카드 아이콘 */
+.citizenship-card .icon-circle i {
+    font-size: 2rem;
+    color: var(--primary-blue);
+}
+
+/* 디지털 시민의식 카드 제목 */
+.citizenship-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* 디지털 시민의식 카드 설명 */
+.citizenship-card p {
+    color: var(--gray-text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* ===== Cyber Ethics Cases Section (사이버 윤리 사례 섹션) ===== */
+/* 사이버 윤리 사례 섹션 배경 */
+.cyber-ethics-cases-new {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+/* 사이버 윤리 사례 섹션 컨테이너 */
+.cyber-ethics-cases-new .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 사이버 윤리 사례 섹션 콘텐츠 레이아웃 */
+.cyber-ethics-cases-new .content-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* 사이버 윤리 사례 섹션 텍스트 영역 */
+.cyber-ethics-cases-new .text-content {
+    padding-right: 20px;
+}
+
+/* 사이버 윤리 사례 섹션 제목 */
+.cyber-ethics-cases-new h2 {
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 사이버 윤리 사례 섹션 설명 */
+.cyber-ethics-cases-new > .container > .content-wrapper > .text-content > p {
+    color: var(--gray-text);
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    line-height: 1.7;
+}
+
+/* 사이버 윤리 사례 섹션 리스트 */
+.cyber-ethics-cases-new ul {
+    margin-bottom: 30px;
+}
+
+/* 사이버 윤리 사례 섹션 리스트 아이템 */
+.cyber-ethics-cases-new ul li {
+    color: var(--gray-text);
+    margin-bottom: 15px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+/* 사이버 윤리 사례 섹션 리스트 아이콘 */
+.cyber-ethics-cases-new ul li i {
+    color: var(--primary-blue);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* 사이버 윤리 사례 섹션 버튼 */
+.cyber-ethics-cases-new .cases-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* 사이버 윤리 사례 섹션 버튼 호버 효과 */
+.cyber-ethics-cases-new .cases-button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* 사이버 윤리 사례 섹션 이미지 영역 */
+.cyber-ethics-cases-new .image-content {
+    text-align: center;
+}
+
+/* 사이버 윤리 사례 섹션 이미지 */
+.cyber-ethics-cases-new .image-content img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 8px 25px var(--box-shadow-medium);
+}
+
+/* ===== Digital Commitment Section (디지털 실천 다짐 섹션) ===== */
+/* 디지털 실천 다짐 섹션 배경 */
+.digital-commitment-section.new-layout {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+/* 디지털 실천 다짐 섹션 제목 */
+.digital-commitment-section.new-layout h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 디지털 실천 다짐 카드 그리드 레이아웃 */
+.commitment-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+/* 디지털 실천 다짐 카드 스타일 */
+.commitment-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 디지털 실천 다짐 카드 호버 효과 */
+.commitment-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--box-shadow-medium);
+}
+
+/* 디지털 실천 다짐 카드 아이콘 박스 */
+.commitment-card .icon-box {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-blue);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    transition: background-color 0.3s ease;
+}
+
+/* 디지털 실천 다짐 카드 아이콘 */
+.commitment-card .icon-box i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+/* 디지털 실천 다짐 카드 제목 */
+.commitment-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* 디지털 실천 다짐 카드 설명 */
+.commitment-card p {
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* 디지털 실천 다짐 작성 버튼 */
+.my-commitment-button-new {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    display: block;
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+}
+
+/* 디지털 실천 다짐 작성 버튼 호버 효과 */
+.my-commitment-button-new:hover {
+    background-color: var(--dark-blue);
+}
+
+/* ===== Digital Ethics Experience Center (디지털 윤리 체험관 섹션) ===== */
+/* 디지털 윤리 체험관 섹션 배경 */
+.digital-ethics-experience-center {
+    background-color: #fff;
+    padding: 80px 0;
+}
+
+/* 디지털 윤리 체험관 섹션 제목 */
+.digital-ethics-experience-center h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 디지털 윤리 체험관 카드 그리드 레이아웃 */
+.experience-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* 디지털 윤리 체험관 카드 스타일 */
+.experience-card {
+    background-color: #fff;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 디지털 윤리 체험관 카드 호버 효과 */
+.experience-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--box-shadow-medium);
+}
+
+/* 디지털 윤리 체험관 카드 이미지 */
+.experience-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* 디지털 윤리 체험관 카드 콘텐츠 */
+.experience-card .card-content {
+    padding: 25px;
+}
+
+/* 디지털 윤리 체험관 카드 제목 */
+.experience-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    font-weight: bold;
+}
+
+/* 디지털 윤리 체험관 카드 설명 */
+.experience-card p {
+    color: var(--gray-text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* 디지털 윤리 체험관 카드 링크 */
+.experience-card .experience-link {
+    color: var(--primary-blue);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 디지털 윤리 체험관 카드 링크 호버 효과 */
+.experience-card .experience-link:hover {
+    color: var(--dark-blue);
+}
+
+/* ===== Help Section (도움 섹션) ===== */
+/* 도움 섹션 배경 */
+.help-section {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+/* 도움 섹션 제목 */
+.help-section h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 도움 섹션 카드 그리드 레이아웃 */
+.help-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+/* 도움 섹션 카드 스타일 */
+.help-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* 도움 섹션 카드 호버 효과 */
+.help-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px var(--box-shadow-medium);
+}
+
+/* 도움 섹션 카드 아이콘 원형 배경 */
+.help-card .icon-circle-small {
+    width: 60px;
+    height: 60px;
+    background-color: var(--light-blue);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    transition: background-color 0.3s ease;
+}
+
+/* 도움 섹션 카드 아이콘 */
+.help-card .icon-circle-small i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+/* 도움 섹션 카드 제목 */
+.help-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* 도움 섹션 카드 설명 */
+.help-card p {
+    color: var(--gray-text);
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+/* 도움 섹션 카드 링크 */
+.help-card .call-link,
+.help-card .email-link {
+    color: var(--primary-blue);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+/* 도움 섹션 카드 링크 호버 효과 */
+.help-card .call-link:hover,
+.help-card .email-link:hover {
+    color: var(--dark-blue);
+}
+
+/* ===== Section Styling (섹션 공통 스타일) ===== */
+/* 섹션 기본 스타일 */
+section {
+    position: relative;
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+/* 섹션 간 구분선 */
+section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+}
+
+/* 섹션 배경색 교대 */
+section:nth-child(odd) {
+    background-color: #fff;
+}
+
+section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+/* 히어로 섹션 특별 배경 */
+.hero-section {
+    background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+}
+
+/* 특별 배경이 필요한 섹션들 */
+.cyber-ethics-cases-new.alt-background {
+    background-color: #f8f9fa;
+}
+
+.digital-ethics-experience-center.alt-background {
+    background-color: #f8f9fa;
+}
+
+.help-section {
+    background-color: #f8f9fa;
+}
+
+/* 섹션 제목 공통 스타일 */
+section h2 {
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--dark-blue);
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 섹션 제목 하단 장식선 */
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: var(--primary-blue);
+    border-radius: 2px;
+}
+
+/* 섹션 컨테이너 */
+section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 섹션 간격 조정 */
+.hero-section::after,
+section + section {
+    margin-top: 0;
+}
+
+/* ===== Responsive Design (반응형 디자인) ===== */
+/* 태블릿 및 작은 화면용 */
+@media (max-width: 768px) {
+    /* 히어로 섹션 높이 조정 */
+    .hero-section {
+        min-height: 400px;
+        padding: 40px 0;
+    }
+
+    /* 히어로 섹션 제목 크기 조정 */
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    /* 히어로 섹션 설명 크기 조정 */
+    .hero-section p {
+        font-size: 1rem;
+    }
+
+    /* 히어로 섹션 이미지 숨김 */
+    .hero-section .hero-image {
+        display: none;
+    }
+}
+
+/* 모바일 화면용 */
+@media (max-width: 480px) {
+    /* 히어로 섹션 높이 조정 */
+    .hero-section {
+        min-height: 350px;
+        padding: 30px 0;
+    }
+
+    /* 히어로 섹션 제목 크기 조정 */
+    .hero-section h1 {
+        font-size: 1.8rem;
+    }
+
+    /* 히어로 섹션 설명 크기 조정 */
+    .hero-section p {
+        font-size: 0.9rem;
+    }
+
+    /* 히어로 섹션 이미지 숨김 */
+    .hero-section .hero-image {
+        display: none;
+    }
+}

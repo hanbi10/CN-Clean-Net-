@@ -1,0 +1,325 @@
+/* ===== 공통 기본 스타일 ===== */
+/* 모든 요소의 기본 여백과 박스 모델 초기화 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 기본 폰트와 배경색 설정 */
+body {
+    font-family: 'Pretendard', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+/* 페이지 전체 컨테이너 스타일 */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+/* 리스트 스타일 초기화 */
+ul {
+    list-style: none;
+}
+
+/* 링크 기본 스타일 */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 버튼 기본 스타일 */
+button {
+    cursor: pointer;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-family: 'Pretendard', sans-serif;
+}
+
+/* ===== 색상 변수 정의 ===== */
+:root {
+    --primary-blue: #1890ff; /* 메인 파란색 */
+    --light-blue: #e6f7ff; /* 연한 파란색 (아이콘 배경 등) */
+    --dark-blue: #0056b3; /* 진한 파란색 (제목 등) */
+    --gray-text: #666; /* 회색 텍스트 */
+    --light-gray-border: #e0e0e0; /* 연한 회색 테두리 */
+    --box-shadow-light: rgba(0, 0, 0, 0.05); /* 연한 그림자 */
+    --box-shadow-medium: rgba(0, 0, 0, 0.1); /* 중간 그림자 */
+    --box-shadow-strong: rgba(0, 0, 0, 0.15); /* 진한 그림자 */
+}
+
+/* ===== 공통 Header 스타일 ===== */
+/* 헤더 배경과 테두리 */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid var(--light-gray-border);
+    padding: 10px 0;
+}
+
+/* 헤더 내부 컨테이너 - 로고, 네비게이션, 검색/로그인 영역 배치 */
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 로고 영역 스타일 */
+header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-right: 20px;
+}
+
+/* 로고 이미지 크기 */
+header .logo img {
+    height: 50px;
+    width: auto;
+}
+
+/* 로고 텍스트 스타일 */
+header .logo p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--dark-blue);
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 로고 링크 스타일 */
+header .logo a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* 로고 링크 호버 효과 */
+header .logo a:hover {
+    text-decoration: none;
+}
+
+/* 네비게이션 메뉴 영역 */
+header nav,
+header .main-nav {
+    flex-grow: 1; /* 남은 공간 차지 */
+    display: flex;
+    justify-content: flex-start;
+}
+
+/* 네비게이션 메뉴 리스트 */
+header nav ul,
+header .main-nav ul {
+    display: flex;
+    margin-left: 20px;
+    list-style: none;
+}
+
+/* 네비게이션 메뉴 아이템 간격 */
+header nav ul li,
+header .main-nav ul li {
+    margin-left: 25px;
+}
+
+/* 네비게이션 메뉴 링크 스타일 */
+header nav ul li a,
+header .main-nav ul li a {
+    color: var(--gray-text);
+    font-weight: bold;
+    padding: 5px 0;
+    transition: color 0.3s ease;
+    text-decoration: none;
+}
+
+/* 네비게이션 메뉴 호버 효과 */
+header nav ul li a:hover,
+header .main-nav ul li a:hover {
+    color: var(--primary-blue);
+}
+
+/* 검색/로그인 영역 */
+header .search-login {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* 검색 입력창 스타일 */
+header .search-login input {
+    padding: 8px;
+    border: 1px solid var(--light-gray-border);
+    border-radius: 5px;
+    margin-right: 10px;
+    font-size: 0.9rem;
+}
+
+/* 로그인 버튼 스타일 */
+header .search-login button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 8px 15px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 로그인 버튼 호버 효과 */
+header .search-login button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* ===== 공통 Footer 스타일 ===== */
+/* 푸터 배경과 여백 */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 0 20px;
+    margin-top: 60px;
+}
+
+/* 푸터 내부 그리드 레이아웃 */
+footer .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* 푸터 섹션 제목 */
+.footer-section h3 {
+    color: #fff;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+/* 푸터 텍스트와 리스트 아이템 */
+footer p, footer ul li {
+    color: #fff;
+    margin-bottom: 8px;
+}
+
+/* 푸터 리스트 링크 */
+footer ul li a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* 푸터 리스트 링크 호버 효과 */
+footer ul li a:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* 푸터 일반 링크 */
+footer a {
+    color: #fff;
+    transition: color 0.3s ease;
+}
+
+/* 푸터 일반 링크 호버 효과 */
+footer a:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* 전화번호 링크 스타일 */
+footer a[href^="tel:"] {
+    color: #fff;
+    font-weight: bold;
+}
+
+/* 전화번호 링크 호버 효과 */
+footer a[href^="tel:"]:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* 웹사이트 링크 스타일 */
+footer a[href^="http"] {
+    color: #fff;
+}
+
+/* 웹사이트 링크 호버 효과 */
+footer a[href^="http"]:hover {
+    color: #fff;
+    opacity: 0.8;
+}
+
+/* 소셜 미디어 아이콘 */
+.social-icons img {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    transition: opacity 0.3s ease;
+}
+
+/* 저작권 정보 */
+.copyright {
+    grid-column: 1 / -1; /* 전체 너비 사용 */
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #555;
+    color: #fff;
+    font-size: 0.9rem;
+}
+
+/* ===== 반응형 디자인 ===== */
+/* 태블릿 및 작은 화면용 */
+@media (max-width: 768px) {
+    /* 헤더 레이아웃을 세로로 변경 */
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    /* 로고 중앙 정렬 */
+    header .logo {
+        padding-right: 0;
+        justify-content: center;
+    }
+
+    /* 네비게이션 메뉴 세로 배치 */
+    header nav,
+    header .main-nav {
+        flex-grow: unset;
+        margin-left: 0;
+        justify-content: center;
+    }
+    
+    /* 네비게이션 메뉴 리스트 세로 배치 */
+    header nav ul,
+    header .main-nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+        margin-left: 0;
+    }
+
+    /* 네비게이션 메뉴 아이템 세로 간격 */
+    header nav ul li,
+    header .main-nav ul li {
+        margin: 10px 0;
+    }
+
+    /* 검색/로그인 영역 중앙 정렬 */
+    header .search-login {
+        margin-left: 0;
+        justify-content: center;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* 검색 입력창 너비 조정 */
+    header .search-login input {
+        width: 60%;
+        max-width: 250px;
+    }
+} 

@@ -1,0 +1,385 @@
+/* ===== 서영.css - 디지털 실천 다짐 페이지 전용 스타일 ===== */
+
+/* ===== Hero Section (히어로 섹션) ===== */
+/* 히어로 섹션 전체 레이아웃 */
+.hero-section {
+    position: relative;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg, #e0f2f7 0%, #f0f8ff 100%);
+    color: #222;
+    overflow: hidden;
+}
+
+/* 히어로 섹션 제목 */
+.hero-section h1 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+    color: var(--dark-blue);
+}
+
+/* 히어로 섹션 설명 텍스트 */
+.hero-section p {
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+    color: var(--gray-text);
+}
+
+/* 히어로 섹션 주요 버튼 (파란색) */
+.hero-section .hero-buttons .primary-button {
+    background-color: var(--primary-blue);
+    color: white;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+/* 히어로 섹션 주요 버튼 호버 효과 */
+.hero-section .hero-buttons .primary-button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* 히어로 섹션 보조 버튼 (테두리만) */
+.hero-section .hero-buttons .secondary-button {
+    background-color: transparent;
+    color: var(--primary-blue);
+    border: 2px solid var(--primary-blue);
+    transition: all 0.3s ease;
+}
+
+/* 히어로 섹션 보조 버튼 호버 효과 */
+.hero-section .hero-buttons .secondary-button:hover {
+    background-color: var(--primary-blue);
+    color: white;
+}
+
+/* 히어로 섹션 이미지 숨김 */
+.hero-section .hero-image {
+    display: none;
+}
+
+/* 히어로 섹션 내부 컨테이너 */
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===== Header Content (헤더 콘텐츠 영역) ===== */
+/* 헤더 섹션 배경과 여백 */
+.header {
+    background-color: #fff;
+    padding: 30px 0;
+}
+
+/* 헤더 콘텐츠 레이아웃 - 제목/설명과 버튼을 좌우로 배치 */
+.header-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 40px;
+}
+
+/* 헤더 왼쪽 영역 (제목과 설명) */
+.header-left {
+    flex: 1;
+}
+
+/* 헤더 제목 */
+.header-title {
+    font-size: 2rem;
+    color: var(--dark-blue);
+    margin-bottom: 12px;
+    font-weight: bold;
+}
+
+/* 헤더 설명 텍스트 */
+.header-description {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* 헤더 오른쪽 영역 (버튼) */
+.header-right {
+    flex-shrink: 0;
+    display: flex;
+    align-items: flex-start;
+    padding-top: 5px;
+}
+
+/* 다짐 작성하기 버튼 */
+.write-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    white-space: nowrap; /* 텍스트 줄바꿈 방지 */
+}
+
+/* 다짐 작성하기 버튼 호버 효과 */
+.write-button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* ===== 반응형 디자인 - 헤더 ===== */
+/* 태블릿 및 작은 화면용 */
+@media (max-width: 768px) {
+    /* 헤더 레이아웃을 세로로 변경 */
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+
+    /* 헤더 왼쪽 영역 순서 */
+    .header-left {
+        order: 1;
+    }
+
+    /* 헤더 오른쪽 영역 순서 */
+    .header-right {
+        order: 2;
+        justify-content: center;
+    }
+
+    /* 헤더 제목 크기 조정 */
+    .header-title {
+        font-size: 1.8rem;
+    }
+
+    /* 다짐 작성하기 버튼 크기 조정 */
+    .write-button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+}
+
+/* 모바일 화면용 */
+@media (max-width: 480px) {
+    /* 헤더 설명 텍스트 크기 조정 */
+    .header-description {
+        font-size: 0.9rem;
+    }
+}
+
+/* ===== Card Grid Styles (카드 그리드 스타일) ===== */
+/* 카드 그리드 레이아웃 */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 개별 카드 스타일 */
+.card {
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 30px;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 카드 호버 효과 */
+.card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--box-shadow-medium);
+}
+
+/* 환경 관련 카드 - 왼쪽 테두리 색상 */
+.card-environment {
+    border-left: 4px solid #4CAF50;
+}
+
+/* 디지털 디톡스 카드 - 왼쪽 테두리 색상 */
+.card-detox {
+    border-left: 4px solid #FF9800;
+}
+
+/* 습관 형성 카드 - 왼쪽 테두리 색상 */
+.card-habit {
+    border-left: 4px solid #2196F3;
+}
+
+/* 카드 헤더 영역 */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 카드 카테고리 태그 */
+.card-header .category {
+    font-size: 0.8rem;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* 환경 카드 카테고리 색상 */
+.card-environment .category {
+    background-color: #E8F5E9;
+    color: #2E7D32;
+}
+
+/* 디지털 디톡스 카드 카테고리 색상 */
+.card-detox .category {
+    background-color: #FFF3E0;
+    color: #E65100;
+}
+
+/* 습관 형성 카드 카테고리 색상 */
+.card-habit .category {
+    background-color: #E3F2FD;
+    color: #1565C0;
+}
+
+/* 카드 제목 */
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 12px;
+    color: var(--dark-blue);
+}
+
+/* 카드 설명 텍스트 */
+.card-description {
+    color: var(--gray-text);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    flex-grow: 1; /* 남은 공간 차지 */
+}
+
+/* 카드 푸터 영역 */
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: var(--gray-text);
+    margin-top: auto; /* 하단에 고정 */
+}
+
+/* 카드 작성자 */
+.card-footer .author {
+    font-weight: bold;
+}
+
+/* 카드 좋아요 영역 */
+.card-footer .likes {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* 카드 좋아요 아이콘 */
+.card-footer .likes i {
+    color: #ff6b6b;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+/* 카드 좋아요 아이콘 호버 효과 */
+.card-footer .likes i:hover {
+    color: #ff5252;
+}
+
+/* ===== Pagination (페이지네이션) ===== */
+/* 페이지네이션 컨테이너 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+/* 페이지네이션 버튼 */
+.pagination a {
+    padding: 10px 15px;
+    border: 1px solid var(--light-gray-border);
+    border-radius: 5px;
+    color: var(--gray-text);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    min-width: 40px;
+    text-align: center;
+}
+
+/* 현재 페이지 버튼 스타일 */
+.pagination a.active {
+    background-color: var(--primary-blue);
+    color: white;
+    border-color: var(--primary-blue);
+}
+
+/* 페이지네이션 버튼 호버 효과 */
+.pagination a:hover:not(.active) {
+    background-color: var(--light-blue);
+    color: var(--primary-blue);
+}
+
+/* ===== 반응형 디자인 ===== */
+/* 태블릿 및 작은 화면용 */
+@media (max-width: 768px) {
+    /* 카드 그리드를 한 열로 변경 */
+    .card-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    /* 카드 패딩과 높이 조정 */
+    .card {
+        padding: 25px;
+        min-height: 180px;
+    }
+
+    /* 카드 제목 크기 조정 */
+    .card-title {
+        font-size: 1.2rem;
+    }
+}
+
+/* 모바일 화면용 */
+@media (max-width: 480px) {
+    /* 카드 그리드 패딩 조정 */
+    .card-grid {
+        padding: 0 15px;
+    }
+
+    /* 카드 패딩과 높이 조정 */
+    .card {
+        padding: 20px;
+        min-height: 160px;
+    }
+
+    /* 페이지네이션 버튼 크기 조정 */
+    .pagination a {
+        padding: 8px 12px;
+        font-size: 0.9rem;
+        min-width: 35px;
+    }
+}

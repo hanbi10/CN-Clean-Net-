@@ -1,0 +1,307 @@
+/* ===== popup.css - 다짐 작성 팝업 전용 스타일 ===== */
+
+/* ===== 팝업 오버레이 ===== */
+/* 팝업 배경 오버레이 - 전체 화면을 덮는 반투명 배경 */
+.popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+/* 팝업 오버레이 활성화 상태 */
+.popup-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* ===== 팝업 컨테이너 ===== */
+/* 팝업 메인 컨테이너 */
+.popup-container {
+    background-color: white;
+    border-radius: 15px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    max-height: 80vh;
+    overflow-y: auto;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transform: scale(0.7);
+    transition: transform 0.3s ease;
+}
+
+/* 팝업 컨테이너 활성화 상태 */
+.popup-overlay.active .popup-container {
+    transform: scale(1);
+}
+
+/* ===== 팝업 헤더 ===== */
+/* 팝업 헤더 영역 */
+.popup-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+/* 팝업 제목 */
+.popup-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+/* 팝업 닫기 버튼 */
+.popup-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+    padding: 5px;
+    border-radius: 50%;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* 팝업 닫기 버튼 호버 효과 */
+.popup-close:hover {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+/* ===== 폼 스타일 ===== */
+/* 폼 그룹 컨테이너 */
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* 폼 라벨 */
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+    font-size: 1rem;
+}
+
+/* 폼 입력 필드 */
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    box-sizing: border-box;
+}
+
+/* 폼 입력 필드 포커스 상태 */
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #1890ff;
+    box-shadow: 0 0 0 3px rgba(24, 144, 255, 0.1);
+}
+
+/* 텍스트 영역 높이 설정 */
+.form-group textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* ===== 카테고리 선택 ===== */
+/* 카테고리 선택 컨테이너 */
+.category-selection {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 카테고리 버튼 */
+.category-btn {
+    flex: 1;
+    padding: 10px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    background-color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* 카테고리 버튼 호버 효과 */
+.category-btn:hover {
+    border-color: #1890ff;
+    background-color: #f0f8ff;
+}
+
+/* 카테고리 버튼 선택 상태 */
+.category-btn.selected {
+    border-color: #1890ff;
+    background-color: #1890ff;
+    color: white;
+}
+
+/* ===== 색상 선택 ===== */
+/* 색상 선택 컨테이너 */
+.color-selection {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* 색상 원형 버튼 */
+.color-option {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 3px solid transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+/* 색상 원형 버튼 호버 효과 */
+.color-option:hover {
+    transform: scale(1.1);
+}
+
+/* 색상 원형 버튼 선택 상태 */
+.color-option.selected {
+    border-color: #333;
+    transform: scale(1.1);
+}
+
+/* 색상별 배경색 */
+.color-option.blue { background-color: #E0F2F7; }
+.color-option.pink { background-color: #FCE4EC; }
+.color-option.yellow { background-color: #FFF9C4; }
+.color-option.green { background-color: #E8F5E9; }
+.color-option.purple { background-color: #F3E5F5; }
+.color-option.orange { background-color: #FFF3E0; }
+
+/* ===== 버튼 영역 ===== */
+/* 팝업 버튼 컨테이너 */
+.popup-buttons {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+    justify-content: flex-end;
+}
+
+/* 팝업 버튼 공통 스타일 */
+.popup-btn {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    min-width: 100px;
+}
+
+/* 취소 버튼 */
+.popup-btn.cancel {
+    background-color: #f0f0f0;
+    color: #666;
+}
+
+/* 취소 버튼 호버 효과 */
+.popup-btn.cancel:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+/* 제출 버튼 */
+.popup-btn.submit {
+    background-color: #1890ff;
+    color: white;
+}
+
+/* 제출 버튼 호버 효과 */
+.popup-btn.submit:hover {
+    background-color: #096dd9;
+}
+
+/* 제출 버튼 비활성화 상태 */
+.popup-btn.submit:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* ===== 반응형 디자인 ===== */
+/* 태블릿 및 작은 화면용 */
+@media (max-width: 768px) {
+    /* 팝업 컨테이너 패딩 조정 */
+    .popup-container {
+        padding: 20px;
+        width: 95%;
+    }
+
+    /* 팝업 제목 크기 조정 */
+    .popup-title {
+        font-size: 1.5rem;
+    }
+
+    /* 카테고리 선택을 세로로 배치 */
+    .category-selection {
+        flex-direction: column;
+    }
+
+    /* 팝업 버튼을 세로로 배치 */
+    .popup-buttons {
+        flex-direction: column;
+    }
+
+    /* 팝업 버튼 너비 조정 */
+    .popup-btn {
+        width: 100%;
+    }
+}
+
+/* 모바일 화면용 */
+@media (max-width: 480px) {
+    /* 팝업 컨테이너 패딩 조정 */
+    .popup-container {
+        padding: 15px;
+    }
+
+    /* 팝업 제목 크기 조정 */
+    .popup-title {
+        font-size: 1.3rem;
+    }
+
+    /* 폼 입력 필드 패딩 조정 */
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+        padding: 10px;
+    }
+
+    /* 카테고리 버튼 패딩 조정 */
+    .category-btn {
+        padding: 8px;
+        font-size: 0.8rem;
+    }
+}

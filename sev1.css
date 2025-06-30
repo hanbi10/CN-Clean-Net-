@@ -1,0 +1,546 @@
+/* ===== sev1.css - 디지털 시민의식 체크리스트 페이지 전용 스타일 ===== */
+
+/* ===== 섹션 공통 스타일 ===== */
+/* 섹션 기본 레이아웃 */
+section {
+    position: relative;
+    background-color: #fff;
+    padding: 60px 0;
+}
+
+/* 섹션 간 구분선 */
+section:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    max-width: 800px;
+    height: 1px;
+    background: linear-gradient(to right, transparent, #e0e0e0, transparent);
+}
+
+/* 섹션 제목 공통 스타일 */
+section h2 {
+    position: relative;
+    padding-bottom: 15px;
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0056b3;
+    font-size: 2.2rem;
+    font-weight: bold;
+}
+
+/* 섹션 제목 하단 장식선 */
+section h2::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #1890ff;
+    border-radius: 2px;
+}
+
+/* 섹션 설명 텍스트 */
+.section-description {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.7;
+}
+
+/* ===== 상단 인트로 섹션 ===== */
+/* 디지털 시민의식 인트로 섹션 배경 */
+.my-citizenship-intro {
+    background: linear-gradient(135deg, #f0f8ff 0%, #e6f7ff 100%);
+    padding: 80px 0 40px;
+    text-align: center;
+}
+
+/* 디지털 시민의식 인트로 제목 */
+.my-citizenship-intro h2 {
+    font-size: 2.5rem;
+    color: #0056b3;
+    margin-bottom: 15px;
+}
+
+/* 디지털 시민의식 인트로 설명 */
+.my-citizenship-intro .section-description {
+    font-size: 1.1rem;
+    color: #666;
+    margin-bottom: 30px;
+}
+
+/* 디지털 시민의식 인트로 하단 장식선 */
+.my-citizenship-intro .underline {
+    width: 60px;
+    height: 4px;
+    background-color: #1890ff;
+    margin: 0 auto;
+    border-radius: 2px;
+}
+
+/* ===== 체크리스트 및 선언문 섹션 ===== */
+/* 체크리스트 섹션 배경 */
+.digital-citizenship-checklist {
+    background-color: #fafafa;
+    padding: 80px 0;
+}
+
+/* 특별한 섹션들의 구분선 숨김 */
+.my-citizenship-intro::after {
+    display: none;
+}
+
+/* 체크리스트 그리드 컨테이너 - 체크리스트와 선언문을 좌우로 배치 */
+.digital-citizenship-checklist .checklist-grid-container {
+    display: grid;
+    grid-template-columns: 2fr 1.5fr; /* 체크리스트가 선언문보다 넓게 */
+    gap: 40px; /* 간격 */
+    align-items: flex-start; /* 상단 정렬 */
+    max-width: 1000px; /* 최대 너비 */
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 체크리스트 콘텐츠와 선언문 콘텐츠 공통 스타일 */
+.checklist-content,
+.declaration-content {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    padding: 30px;
+}
+
+/* 체크리스트 콘텐츠와 선언문 콘텐츠 제목 */
+.checklist-content h3,
+.declaration-content h3 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 25px;
+}
+
+/* ===== 진행률 바 ===== */
+/* 진행률 바 컨테이너 */
+.progress-bar-container {
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    height: 10px;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+/* 진행률 바 */
+.progress-bar {
+    height: 100%;
+    background-color: var(--primary-blue);
+    border-radius: 5px;
+    transition: width 0.3s ease-in-out;
+}
+
+/* 진행률 텍스트 */
+.progress-text {
+    position: absolute;
+    right: 0;
+    top: -25px; /* 바 위에 위치 */
+    font-size: 0.9rem;
+    color: var(--gray-text);
+}
+
+/* ===== 체크리스트 아이템 ===== */
+/* 체크리스트 아이템 컨테이너 */
+.checklist-items {
+    text-align: left; /* 텍스트 왼쪽 정렬 */
+}
+
+/* 체크리스트 아이템 */
+.checklist-items li {
+    display: flex; /* 체크박스와 라벨 정렬 */
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+/* 체크리스트 체크박스 */
+.checklist-items input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin-right: 15px;
+    accent-color: var(--primary-blue); /* 체크박스 색상 */
+    flex-shrink: 0; /* 체크박스 크기 유지 */
+    cursor: pointer;
+}
+
+/* 체크리스트 라벨 */
+.checklist-items label {
+    font-size: 1rem;
+    color: var(--gray-text);
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+/* ===== 선언문 영역 ===== */
+/* 선언문 텍스트 영역 */
+.declaration-area {
+    min-height: 200px; /* 선언문 영역 최소 높이 */
+    border: 1px solid var(--light-gray-border);
+    border-radius: 8px;
+    background-color: #fcfcfc;
+    padding: 20px;
+    margin-bottom: 25px;
+    text-align: center; /* placeholder 중앙 정렬 */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--gray-text);
+    line-height: 1.6;
+}
+
+/* 선언문 placeholder 텍스트 */
+.declaration-area p.placeholder {
+    color: #a0a0a0;
+    font-style: italic;
+}
+
+/* ===== 선언문 옵션 ===== */
+/* 선언문 옵션 컨테이너 */
+.declaration-options {
+    text-align: left; /* 옵션들 왼쪽 정렬 */
+}
+
+/* 선언문 옵션 그룹 */
+.declaration-options .option-group {
+    margin-bottom: 20px;
+}
+
+/* 선언문 옵션 라벨 */
+.declaration-options label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* 선언문 옵션 입력창 */
+.declaration-options input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--light-gray-border);
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+/* ===== 색상 팔레트 ===== */
+/* 색상 팔레트 컨테이너 */
+.color-palette {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+/* 색상 원형 버튼 */
+.color-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    cursor: pointer;
+    border: 2px solid transparent;
+    transition: border-color 0.3s ease;
+}
+
+/* 선택된 색상 원형 버튼 */
+.color-circle.active {
+    border-color: #333;
+}
+
+/* 색상별 배경색 */
+.color-circle.blue { background-color: #E0F2F7; }
+.color-circle.pink { background-color: #FCE4EC; }
+.color-circle.yellow { background-color: #FFF9C4; }
+.color-circle.green { background-color: #E8F5E9; }
+
+/* ===== 토글 스위치 ===== */
+/* 토글 스위치 컨테이너 */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+/* 토글 스위치 입력 */
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* 토글 스위치 슬라이더 */
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+/* 토글 스위치 슬라이더 핸들 */
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+/* 토글 스위치 활성화 상태 */
+input:checked + .slider {
+    background-color: var(--primary-blue);
+}
+
+/* 토글 스위치 활성화 시 핸들 위치 */
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* ===== 버튼 스타일 ===== */
+/* 다운로드 및 공유 버튼 공통 스타일 */
+.declaration-options .download-button,
+.declaration-options .share-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+/* 다운로드 버튼 */
+.declaration-options .download-button {
+    background-color: #28a745;
+}
+
+/* 다운로드 버튼 호버 효과 */
+.declaration-options .download-button:hover {
+    background-color: #218838;
+}
+
+/* 공유 버튼 */
+.declaration-options .share-button {
+    background-color: #17a2b8;
+}
+
+/* 공유 버튼 호버 효과 */
+.declaration-options .share-button:hover {
+    background-color: #138496;
+}
+
+/* ===== 디지털 실천 다짐 섹션 ===== */
+/* 디지털 실천 다짐 섹션 배경 */
+.my-digital-commitment {
+    background-color: #fff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* 디지털 실천 다짐 섹션 제목 */
+.my-digital-commitment h3 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+/* 디지털 실천 다짐 작성 버튼 */
+.my-digital-commitment .create-commitment-button {
+    background-color: var(--primary-blue);
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* 디지털 실천 다짐 작성 버튼 호버 효과 */
+.my-digital-commitment .create-commitment-button:hover {
+    background-color: var(--dark-blue);
+}
+
+/* ===== 관련 기관 섹션 ===== */
+/* 관련 기관 섹션 배경 */
+.related-organizations {
+    background-color: #f8f9fa;
+    padding: 80px 0;
+}
+
+/* 관련 기관 섹션 컨테이너 */
+.related-organizations .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* 관련 기관 컬럼 */
+.org-column {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px var(--box-shadow-light);
+    text-align: center;
+}
+
+/* 관련 기관 컬럼 제목 */
+.org-column h3 {
+    color: var(--dark-blue);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+/* 관련 기관 리스트 */
+.org-column ul {
+    list-style: none;
+    margin-bottom: 20px;
+}
+
+/* 관련 기관 리스트 아이템 */
+.org-column ul li {
+    margin-bottom: 10px;
+    color: var(--gray-text);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* 관련 기관 리스트 아이콘 */
+.org-column ul li i {
+    color: var(--primary-blue);
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* 관련 기관 소셜 아이콘 */
+.org-column .social-icons {
+    margin-top: 20px;
+}
+
+/* 관련 기관 소셜 아이콘 이미지 */
+.org-column .social-icons img {
+    width: 25px;
+    height: 25px;
+    margin: 0 5px;
+    transition: opacity 0.3s ease;
+}
+
+/* 관련 기관 소셜 아이콘 호버 효과 */
+.org-column .social-icons img:hover {
+    opacity: 0.7;
+}
+
+/* 관련 기관 설명 */
+.org-column p {
+    margin-top: 15px;
+    color: var(--gray-text);
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* ===== 반응형 디자인 ===== */
+/* 태블릿 및 작은 화면용 */
+@media (max-width: 992px) {
+    /* 체크리스트 그리드를 한 열로 변경 */
+    .digital-citizenship-checklist .checklist-grid-container {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    /* 체크리스트 콘텐츠와 선언문 콘텐츠 패딩 조정 */
+    .checklist-content,
+    .declaration-content {
+        padding: 25px;
+    }
+
+    /* 체크리스트 콘텐츠와 선언문 콘텐츠 제목 크기 조정 */
+    .checklist-content h3,
+    .declaration-content h3 {
+        font-size: 1.5rem;
+    }
+
+    /* 선언문 영역 높이 조정 */
+    .declaration-area {
+        min-height: 150px;
+    }
+}
+
+/* 모바일 화면용 */
+@media (max-width: 768px) {
+    /* 디지털 시민의식 인트로 제목 크기 조정 */
+    .my-citizenship-intro h2 {
+        font-size: 2rem;
+    }
+
+    /* 디지털 시민의식 인트로 설명 크기 조정 */
+    .my-citizenship-intro .section-description {
+        font-size: 1rem;
+    }
+
+    /* 체크리스트 콘텐츠와 선언문 콘텐츠 제목 크기 조정 */
+    .checklist-content h3,
+    .declaration-content h3 {
+        font-size: 1.3rem;
+    }
+
+    /* 체크리스트 라벨 크기 조정 */
+    .checklist-items label {
+        font-size: 0.9rem;
+    }
+
+    /* 다운로드 및 공유 버튼을 세로로 배치 */
+    .declaration-options .download-button,
+    .declaration-options .share-button {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* 관련 기관 컬럼 패딩 조정 */
+    .org-column {
+        padding: 20px;
+    }
+
+    /* 관련 기관 리스트 마진 조정 */
+    .org-column ul {
+        margin-bottom: 15px;
+    }
+
+    /* 관련 기관 리스트 아이템 크기 조정 */
+    .org-column ul li {
+        font-size: 0.9rem;
+    }
+
+    /* 관련 기관 소셜 아이콘 마진 조정 */
+    .org-column .social-icons {
+        margin-top: 15px;
+    }
+}
