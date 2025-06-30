@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>나의 디지털 시민의식은? - CN Clean-Net</title>
+    <!-- 공통 CSS 스타일시트 -->
+    <link rel="stylesheet" href="../css/common.css">
+    <!-- sev1 페이지 전용 CSS 스타일시트 -->
+    <link rel="stylesheet" href="../css/sev1.css">
+    <!-- Pretendard 폰트 (한국어 최적화) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Awesome 아이콘 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- ===== 헤더 영역 ===== -->
+    <header>
+        <div class="container">
+            <!-- 로고 및 브랜드명 -->
+            <div class="logo">
+                <img src="../images/main_img/logo.png" alt="로고">
+                <p>CN Clean-Net</p>
+            </div>
+            <!-- 네비게이션 메뉴 -->
+            <nav>
+                <ul>
+                    <li><a href="#">디지털 시민의식</a></li>
+                    <li><a href="#">사이버 윤리 사례 모음</a></li>
+                    <li><a href="#">디지털 실천 다짐</a></li>
+                    <li><a href="#">디지털 윤리 채널</a></li>
+                    <li><a href="#">나의 디지털 시민의식은?</a></li>
+                </ul>
+            </nav>
+            <!-- 검색 및 로그인 영역 -->
+            <div class="search-login">
+                <input type="text" placeholder="검색">
+                <button>로그인</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== 메인 콘텐츠 영역 ===== -->
+    <main>
+        <!-- ===== 디지털 시민의식 인트로 섹션 ===== -->
+        <section class="my-citizenship-intro">
+            <h2>시민의식 체크리스트</h2>
+            <p class="section-description">디지털 세상에서 책임감 있는 시민으로서 나의 행동을 점검하고, 실천 다짐을 만들어보세요.</p>
+        </section>
+
+        <!-- ===== 디지털 시민의식 체크리스트 섹션 ===== -->
+        <section class="digital-citizenship-checklist" style="display: flex; justify-content: center; align-items: flex-start; min-height: 60vh;">
+            <div class="checklist-content" style="max-width: 1100px; width: 100%; margin: 0 auto;">
+                <h3 style="text-align:center; font-size:2rem;">디지털 시민의식 체크리스트</h3>
+                <!-- 체크리스트 항목들 -->
+                <ul class="checklist-items" id="checklist-items">
+                    <!-- 온라인 예절 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 온라인에서 다른 사람의 의견을 존중하고 예의를 갖춰 대화합니다.</label></li>
+                    <!-- 정보 검증 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 온라인에서 허위 정보를 퍼뜨리지 않고, 정보의 출처를 확인합니다.</label></li>
+                    <!-- 개인정보 보호 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 다른 사람의 개인정보를 동의 없이 공유하지 않습니다.</label></li>
+                    <!-- 사이버 폭력 예방 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 사이버 폭력이나 혐오 표현에 동참하지 않습니다.</label></li>
+                    <!-- 저작권 존중 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 디지털 콘텐츠의 저작권을 존중하며 불법 다운로드를 하지 않습니다.</label></li>
+                    <!-- 건강한 대화 문화 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 온라인에서 건강한 대화와 토론 문화를 만들기 위해 노력합니다.</label></li>
+                    <!-- 디지털 기기 사용 관리 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 디지털 기기 사용 시간을 적절히 조절하고 관리합니다.</label></li>
+                    <!-- 보안 관리 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 개인정보와 계정 보안을 철저히 관리합니다.</label></li>
+                    <!-- 디지털 시민 참여 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 디지털 환경에서 발생하는 문제에 대해 적극적으로 목소리를 냅니다.</label></li>
+                    <!-- 긍정적 변화 기여 관련 체크리스트 -->
+                    <li><label><input type="checkbox"> 나는 디지털 기술을 통해 사회에 긍정적인 변화를 만들기 위해 노력합니다.</label></li>
+                </ul>
+                <!-- 결과 확인 버튼 -->
+                <button id="show-result-btn" style="display:block; margin:32px auto 0 auto; min-width:180px; font-size:1.1rem; padding:12px 32px; border-radius:8px; background:#1890ff; color:#fff; border:none; cursor:pointer;">결과 확인하기</button>
+                <!-- 결과 표시 카드 -->
+                <div id="result-card" class="result-card" style="display:none; margin:32px auto 0 auto; max-width:500px; text-align:center; font-size:1.2rem; padding:24px; border-radius:12px; background:#f8f9fa; box-shadow:0 2px 8px rgba(0,0,0,0.07);"></div>
+            </div>
+        </section>
+    </main>
+
+    <!-- ===== 푸터 영역 ===== -->
+    <footer>
+        <div class="container">
+            <!-- 푸터 콘텐츠 그리드 -->
+            <div class="footer-section">
+                <!-- 청소년 상담 센터 정보 -->
+                <h3>청소년 상담 센터</h3>
+                <p><a href="tel:1388">1388 (24시간 운영)</a></p>
+                <p><a href="https://www.youth.go.kr" target="_blank">www.youth.go.kr</a></p>
+                <p>(41770) 대구광역시 서구 서대구로 222, 3층 </p>
+            </div>
+            <!-- 사이버 폭력 신고 정보 -->
+            <div class="footer-section">
+                <h3>사이버 폭력 신고</h3>
+                <p>경찰청 사이버수사국</p>
+                <p><a href="https://www.police.go.kr" target="_blank">www.police.go.kr</a></p>
+            </div>
+            <!-- 관련 기관 링크 -->
+            <div class="footer-section">
+                <h3>관련 기관</h3>
+                <ul>
+                    <li><a href="https://www.nia.or.kr" target="_blank">한국정보화진흥원</a></li>
+                    <li><a href="https://www.kcc.go.kr" target="_blank">방송통신위원회</a></li>
+                    <li><a href="https://www.police.go.kr" target="_blank">경찰청</a></li>
+                </ul>
+            </div>
+            <!-- 소셜 미디어 링크 -->
+            <div class="footer-section">
+                <h3>소셜 미디어</h3>
+                <div class="social-icons">
+                    <a href="https://www.facebook.com" target="_blank"><img src="../images/main_img/facebook_icon.png" alt="페이스북"></a>
+                    <a href="https://twitter.com" target="_blank"><img src="../images/main_img/letter-x (1).png" alt="트위터"></a>
+                    <a href="https://www.instagram.com" target="_blank"><img src="../images/main_img/instagram (1).png" alt="인스타그램"></a>
+                </div>
+            </div>
+        </div>
+        <!-- 저작권 정보 -->
+        <div class="copyright">
+            <p>&copy; 2025 디지털 시민의식과 사이버 윤리. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- sev1 페이지 전용 JavaScript 파일 로드 -->
+    <script src="../js/sev1.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>다짐 작성하기 - CN Clean-Net</title>
+    <!-- 팝업 전용 CSS 스타일시트 -->
+    <link rel="stylesheet" href="../css/popup.css">
+    <!-- Pretendard 폰트 (한국어 최적화) -->
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+    <!-- Font Awesome 아이콘 라이브러리 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <!-- ===== 팝업 오버레이 ===== -->
+    <div class="popup-overlay active">
+        <!-- ===== 팝업 컨테이너 ===== -->
+        <div class="popup-container">
+            <!-- ===== 팝업 헤더 ===== -->
+            <div class="popup-header">
+                <h2 class="popup-title">나의 디지털 실천 다짐 작성하기</h2>
+                <button class="popup-close" onclick="closePopup()">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+            <!-- ===== 다짐 작성 폼 ===== -->
+            <form id="commitmentForm">
+                <!-- 제목 입력 필드 -->
+                <div class="form-group">
+                    <label for="title">다짐 제목 *</label>
+                    <input type="text" id="title" name="title" placeholder="예: 매일 30분 디지털 디톡스" required>
+                </div>
+
+                <!-- 다짐 내용 입력 필드 -->
+                <div class="form-group">
+                    <label for="description">다짐 내용 *</label>
+                    <textarea id="description" name="description" placeholder="구체적인 다짐 내용을 작성해주세요. (예: 스마트폰 사용 시간을 줄이고 실제 대화에 더 많은 시간을 투자하겠습니다.)" required></textarea>
+                </div>
+
+                <!-- 작성자 입력 필드 -->
+                <div class="form-group">
+                    <label for="author">작성자 *</label>
+                    <input type="text" id="author" name="author" placeholder="이름 또는 닉네임" required>
+                </div>
+
+                <!-- 카테고리 선택 -->
+                <div class="form-group">
+                    <label>카테고리 *</label>
+                    <div class="category-selection">
+                        <button type="button" class="category-btn" data-category="환경">환경</button>
+                        <button type="button" class="category-btn" data-category="디지털 디톡스">디지털 디톡스</button>
+                        <button type="button" class="category-btn" data-category="습관 형성">습관 형성</button>
+                    </div>
+                </div>
+
+                <!-- 색상 선택 -->
+                <div class="form-group">
+                    <label>카드 색상</label>
+                    <div class="color-selection">
+                        <div class="color-option blue" data-color="blue"></div>
+                        <div class="color-option pink" data-color="pink"></div>
+                        <div class="color-option yellow" data-color="yellow"></div>
+                        <div class="color-option green" data-color="green"></div>
+                        <div class="color-option purple" data-color="purple"></div>
+                        <div class="color-option orange" data-color="orange"></div>
+                    </div>
+                </div>
+
+                <!-- ===== 버튼 영역 ===== -->
+                <div class="popup-buttons">
+                    <button type="button" class="popup-btn cancel">취소</button>
+                    <button type="submit" class="popup-btn submit">다짐 등록하기</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 팝업 전용 JavaScript 파일 로드 -->
+    <script src="../js/popup.js"></script>
+</body>
+</html>
